@@ -265,6 +265,7 @@ export default {
         },
         customBackend: {
           "localhost:25500 本地版": "http://localhost:25500/sub?",
+          "sub.ishadows.cn（自建）": "https://sub.ishadows.cn/sub?",
           "subcon.py6.pw(subconverter作者提供1)":
             "https://subcon.py6.pw/sub?",
           "subconverter-web.now.sh(subconverter作者提供2-稳定)":
@@ -276,6 +277,7 @@ export default {
         },
         backendOptions: [
           { value: "http://localhost:25500/sub?" },
+          { value: "https://sub.ishadows.cn/sub?" },
           { value: "https://subcon.py6.pw/sub?" },
           { value: "https://subconverter-web.now.sh/sub?" },
           { value: "https://subconverter.herokuapp.com/sub?" },
@@ -288,6 +290,10 @@ export default {
               {
                 label: "不选，由接口提供方提供",
                 value: ""
+              },
+              {
+                label: "自定义配置文件",
+                value: "https://raw.githubusercontent.com/zhongfly/clash/master/ACL4SSR_Netease.ini"
               }
             ]
           },
@@ -573,7 +579,7 @@ export default {
   },
   created() {
     // document.title = "ACL4SSR Subscription Converter";
-    document.title = "ACL4SSR 在线订阅转换";
+    document.title = "在线订阅转换";
      this.isPC = this.$getOS().isPc;
   },
   mounted() {
